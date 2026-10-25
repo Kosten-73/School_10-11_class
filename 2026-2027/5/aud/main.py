@@ -119,21 +119,120 @@
 #         print(r)
 #         break
 
-def to10(n, i = 3):
-    temp = ""
-    while n > 0:
-        temp += str(n % i)
-        n //= i
-    return temp[::-1]
+# def to10(n, i = 3):
+#     temp = ""
+#     while n > 0:
+#         temp += str(n % i)
+#         n //= i
+#     return temp[::-1]
+#
+#
+# for n in range(1, 1000):
+#     n3 = to10(n)
+#     if n % 3 == 0:
+#         n3 += n3[-3:]
+#     else:
+#         n3 += to10((n % 3) * 3)
+#     r = int(n3, 3)
+#     if r > 150:
+#         print(n)
+#         break
 
 
-for n in range(1, 1000):
-    n3 = to10(n)
-    if n % 3 == 0:
-        n3 += n3[-3:]
+
+
+
+
+def to10(x, y=3):
+    s = ''
+    while x > 0:
+        s += str(x % y)
+        x //= y
+    return s[::-1]
+
+# for n in range(1, 1000):
+#     n3 = to10(n, 3)
+#     if n % 3 == 0:
+#         n3 += n3[-3:]
+#     else:
+#         n3 += to10((n % 3) * 3, 3)
+#     r = int(n3, 3)
+#     if r > 150:
+#         print(n, r)
+#         break
+
+
+
+# for n in range(1, 1000):
+#     n3 = to10(n)/
+#     if n % 3 == 0:
+#         n3 = "1" + n3 + "02"
+#     else:
+#         n3 += to10((n % 3) * 4)
+#     r = int(n3, 3)
+#     if r < 199:
+#         print(n, r)
+
+
+# for n in range(1, 1000):
+#     n5 =  to10(n, 5)
+#     if n % 7 == 0:
+#         n5 += n5[-2:]
+#     else:
+#         n5 += to10((n % 7) * 7)
+#     r = int(n5, 5)
+#     if r > 1234:
+#         print(n, r)
+
+# for n in range(1, 1000):
+#     n8 = oct(n)[2:]
+#     t2 = n8.count("1") * n
+#     t3 = hex(t2)[2:]
+#     r = t3.count("4")
+#     if r == 2:
+#         print(n)
+#         break
+
+# for n in range(1, 10000):
+#     n2 = bin(n)[2:]
+#     n2 = n2.replace("1", "2")
+#     n2 = n2.replace("0", "1")
+#     n2 = n2.replace("2", "0")
+#     we = n - int(n2, 2)
+#     if we == 1443:
+#         print(n)
+#         break
+
+
+# for n in range (1,1000):
+#     n2=bin(n)[2:]
+#     if n%2==0:
+#         n2=n2.replace("1","11")
+#     else:
+#         n2=n2.replace("0","00")
+#     r=int(n2,2)
+#     if r>70:
+#         print(n)
+#         break
+
+# for n in range (1, 10000):
+#     n2 = bin(n)[2:]
+#     if n % 3 == 0:
+#         n2 += n2[-3:]
+#     else:
+#         n2 += bin(((n % 3) + 1) * 3)[2:]
+#     r = int(n2, 2)
+#     if r < 416:
+#         print(n, r)
+
+for n in range (1, 1000):
+    n2 = bin(n)[2:]
+    n2 += str(n%2)
+    if n2.count("1") %3==0:
+        n2="11"+n2 [2:]
     else:
-        n3 += to10((n % 3) * 3)
-    r = int(n3, 3)
-    if r > 150:
+        n2="10"+n2 [2:]
+    r = int(n2, 2)
+    if r>=26:
         print(n)
-        break
+        break 
