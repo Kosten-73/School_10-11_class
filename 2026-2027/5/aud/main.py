@@ -225,14 +225,90 @@ def to10(x, y=3):
 #     if r < 416:
 #         print(n, r)
 
-for n in range (1, 1000):
-    n2 = bin(n)[2:]
-    n2 += str(n%2)
-    if n2.count("1") %3==0:
-        n2="11"+n2 [2:]
+# for n in range (1, 1000):
+#     n2 = bin(n)[2:]
+#     n2 += str(n%2)
+#     if n2.count("1") %3==0:
+#         n2="11"+n2 [2:]
+#     else:
+#         n2="10"+n2 [2:]
+#     r = int(n2, 2)
+#     if r>=26:
+#         print(n)
+#         break
+
+
+
+# for n in range(1, 1000):
+#     n2 = bin(n)[2:]
+#     if n % 4 == 0:
+#         n2 += n2
+#     else:
+#         n2 += n2[::-1]
+#     R = int(n2, 2)
+#     if R >= 544:
+#         print(n)
+#         break
+
+
+# out_mas = [1000, 0, None]
+# for n in range(1, 1000):
+#     n2 = bin(n)[2:]
+#     if n % 3 == 0: n2 += n2[-3:]
+#     else: n2 += bin(n % 3 * 3) [2:]
+#     R = int(n2, 2)
+#     if abs(130 - R) <= out_mas[0]:# and n > out_mas[1]:
+#             out_mas = [abs(130 - R), n, R]
+#
+# print(out_mas)
+#
+
+# for n in range(1, 1000):
+#     n2 = bin(n)[2:]
+#     if len(n2) % 2 == 0:
+#         n2 = n2[:len(n2) // 2] + '1' + n2[len(n2) // 2:]
+#     else:
+#         pass
+#     R = int(n2,2)
+#     if R >= 26:
+        # print(R,n)
+
+
+# def to10(x, y=3):
+#     s = ''
+#     while x > 0:
+#         s += str(x % y)
+#         x //= y
+#     return s[::-1]
+# for n in range(1,100):
+#     n4= to10(n,4)
+#     s=" "
+#     if n%4==0:
+#         n4+=n4[-2:]
+#     else:
+#         n4+=to10(n%4*2,4)
+#     r=int(n4,4)
+#     if r<261:
+#         print(r,n)
+
+max_x = None
+for x in range(100, 1000):
+    s1 = int(str(x)[0])**2 + int(str(x)[1])**2
+    s2 = int(str(x)[1])**2 + int(str(x)[2])**2
+    if s1 >= s2:
+        r = f"{s1}{s2}"
     else:
-        n2="10"+n2 [2:]
-    r = int(n2, 2)
-    if r>=26:
-        print(n)
-        break 
+        r = f"{s2}{s1}"
+    if r == "9752":
+        if max_x is None:
+            max_x = x
+
+        max_x = max(max_x, x)
+
+print(max_x)
+
+
+
+
+
+
