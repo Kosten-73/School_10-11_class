@@ -291,24 +291,48 @@ def to10(x, y=3):
 #     if r<261:
 #         print(r,n)
 
-max_x = None
-for x in range(100, 1000):
-    s1 = int(str(x)[0])**2 + int(str(x)[1])**2
-    s2 = int(str(x)[1])**2 + int(str(x)[2])**2
-    if s1 >= s2:
-        r = f"{s1}{s2}"
+# max_x = None
+# for x in range(100, 1000):
+#     s1 = int(str(x)[0])**2 + int(str(x)[1])**2
+#     s2 = int(str(x)[1])**2 + int(str(x)[2])**2
+#     if s1 >= s2:
+#         r = f"{s1}{s2}"
+#     else:
+#         r = f"{s2}{s1}"
+#     if r == "9752":
+#         if max_x is None:
+#             max_x = x
+#
+#         max_x = max(max_x, x)
+#
+# print(max_x)
+#
+#
+#
+
+
+# for i in range(1000, 10000):
+#     digits = [int(d) for d in str(i)]
+#     s = sum(digits)
+#     p1 = s - max(digits)
+#     p2 = s - min(digits)
+#     if p1 > p2:
+#         l = f"{p2}{p1}"
+#     else:
+#         l = f"{p1}{p2}"
+#     if int(l) == 1318:
+#         print(f"l = {l}; i = {i}")
+
+import math
+
+for i in range(999, 99, -1):
+    digits = [int(d) for d in str(i)]
+    M = math.prod(digits)
+    S = sum(digits)
+    if M > S:
+        A = int(f'{M}{S}')
     else:
-        r = f"{s2}{s1}"
-    if r == "9752":
-        if max_x is None:
-            max_x = x
-
-        max_x = max(max_x, x)
-
-print(max_x)
-
-
-
-
-
-
+        A = int(f'{S}{M}')
+    if A == 33621:
+        print(i)
+        break
